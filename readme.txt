@@ -11,4 +11,4 @@ p.s.
 I do not have any licens for this game and have no plan of publishing and/or selling it as an executable.
 I am starting to read "clean code" by Robert Martin, so my code will most likely slowly change in style as I progres in the next few months.
 
-alex starfinder (meir)
+alex starWatcher (meir)
