@@ -9,6 +9,8 @@
 struct sqr
 {
 	sqr();
-	bool addstack(int stack, piece* nextPiece);
-	piece* cutStack(int stack);	
+	bool basePtrStatus();
+	void addstack(int newStackSize, piece* nextPiece);
+	piece* cutStack(int stackToCut);
+	void printSqr();
 };

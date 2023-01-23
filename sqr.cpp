@@ -1,7 +1,8 @@
-#include "board.h"
+
+#include "sqr.h"
 	
 struct sqr
-{	
+{
 private:
 	int stackSize;
 	piece* basePtr;
@@ -17,16 +18,18 @@ public:
 		stackSize = 0;
 	}
 
-	bool addstack(int stack, piece* nextPiece)
+	bool basePtrStatus(){ return basePtr == nullptr ? false : true;}
+
+	void addstack(int newStackSize, piece* nextPiece)
 	{
 		runnerPtr = basePtr;
-		stackSize += stack;
+		stackSize += newStackSize;
 
 		if (basePtr == nullptr)
 		{
 			basePtr = nextPiece;
 			runnerPtr = basePtr;
-			return true;
+			return;
 		}
 
 
@@ -35,19 +38,28 @@ public:
 			runnerPtr = runnerPtr->getNext();
 		}
 		runnerPtr->setNext(nextPiece);
-		return true;
+		return ;
 	}
 
-	piece* cutStack(int stack)
+	piece* cutStack(int stackToCut)
 	{	
 		piece* piecePtr = nullptr;
-		int leftOver = stackSize - stack;
+		int leftOver = stackSize - stackToCut;
 		if (leftOver < 0) { return nullptr; }
 
 		for (int i = 0; i < leftOver-1; i++) runnerPtr = runnerPtr->getNext();
 		piecePtr = runnerPtr->getNext();
 		runnerPtr->setNext(nullptr);
 		return piecePtr;
+	}
+
+	void printSqr()
+	{
+		while (runnerPtr != nullptr)
+		{
+			runnerPtr->printPiece();
+			runnerPtr = runnerPtr->getNext();
+		}
 	}
 };
 

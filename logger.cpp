@@ -3,7 +3,11 @@
 
 
 
-void logger(std::string log) 
+void logger(std::string log, int intger) 
+{
+	std::cout << "[logged]" << log <<intger<< std::endl;
+};
+void logger(std::string log)
 {
 	std::cout << "[logged]" << log << std::endl;
 };
@@ -18,4 +22,3 @@ int IputLogInt(std::string query)
 	std::cin >> answer;
 	return answer;
 }
-

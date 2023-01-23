@@ -1,6 +1,5 @@
 #pragma once
 #include "logger.h"
-#include "board.h"
 #include "utils.h"
 #include <string>
 
@@ -16,4 +15,6 @@ public:
 	void setNext(piece* next);
 	utils::stateEnum getState();
 	void toppel();
+	std::string getStringedState();
+	void printPiece()
 };

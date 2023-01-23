@@ -13,6 +13,6 @@ namespace utils
 		NA= 6
 	};
 
-	static int boardEdge;
+	static int boardEdgeSize = 5;
 	static bool boardInstenceCounter;
 }
